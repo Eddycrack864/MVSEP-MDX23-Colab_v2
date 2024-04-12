@@ -914,7 +914,7 @@ def dBgain(audio, volume_gain_dB):
 
 if __name__ == '__main__':
     start_time = time()
-    print("started!\n")
+    print("Started!\n")
     m = argparse.ArgumentParser()
     m.add_argument("--input_audio", "-i", nargs='+', type=str, help="Input audio location. You can provide multiple files at once", required=True)
     m.add_argument("--output_folder", "-r", type=str, help="Output audio folder", required=True)
@@ -945,36 +945,35 @@ if __name__ == '__main__':
     m.add_argument("--restore_gain", action='store_true', help="restore original gain after separation")
     m.add_argument("--filter_vocals", action='store_true', help="Remove audio below 50hz in vocals stem")
     options = m.parse_args().__dict__
-    print("Options: ")
+    #print("Options: ")
 
-    print(f'Input Gain: {options["input_gain"]}dB')
-    print(f'Restore Gain: {options["restore_gain"]}')
-    print(f'BigShifts: {options["BigShifts"]}\n')
+    #print(f'Input Gain: {options["input_gain"]}dB')
+    #print(f'Restore Gain: {options["restore_gain"]}')
+    #print(f'BigShifts: {options["BigShifts"]}\n')
 
-    print(f'BSRoformer_model: {options["BSRoformer_model"]}')
-    print(f'weight_BSRoformer: {options["weight_BSRoformer"]}')
-    print(f'weight_InstVoc: {options["weight_InstVoc"]}\n')
+    #print(f'BSRoformer_model: {options["BSRoformer_model"]}')
+    #print(f'weight_BSRoformer: {options["weight_BSRoformer"]}')
+    #print(f'weight_InstVoc: {options["weight_InstVoc"]}\n')
 
-    print(f'use_VitLarge: {options["use_VitLarge"]}')
-    if options["use_VitLarge"] is True:    
-       print(f'weight_VitLarge: {options["weight_VitLarge"]}\n')
+    #print(f'use_VitLarge: {options["use_VitLarge"]}')
+    #if options["use_VitLarge"] is True:    
+       #print(f'weight_VitLarge: {options["weight_VitLarge"]}\n')
     
-    print(f'use_VOCFT: {options["use_VOCFT"]}')
-    if options["use_VOCFT"] is True:
-        print(f'overlap_VOCFT: {options["overlap_VOCFT"]}')
-        print(f'weight_VOCFT: {options["weight_VOCFT"]}\n')
+    #print(f'use_VOCFT: {options["use_VOCFT"]}')
+    #if options["use_VOCFT"] is True:
+        #print(f'overlap_VOCFT: {options["overlap_VOCFT"]}')
+        #print(f'weight_VOCFT: {options["weight_VOCFT"]}\n')
         
-    print(f'use_InstHQ4: {options["use_InstHQ4"]}')
-    if options["use_InstHQ4"] is True:
-        print(f'overlap_InstHQ4: {options["overlap_InstHQ4"]}')
-        print(f'weight_InstHQ4: {options["weight_InstHQ4"]}\n')
+    #print(f'use_InstHQ4: {options["use_InstHQ4"]}')
+    #if options["use_InstHQ4"] is True:
+        #print(f'overlap_InstHQ4: {options["overlap_InstHQ4"]}')
+        #print(f'weight_InstHQ4: {options["weight_InstHQ4"]}\n')
 
-    print(f'vocals_only: {options["vocals_only"]}')
+    #print(f'vocals_only: {options["vocals_only"]}')
     
-    if options["vocals_only"] is False:
-        print(f'overlap_demucs: {options["overlap_demucs"]}\n')
+    #if options["vocals_only"] is False:
+        #print(f'overlap_demucs: {options["overlap_demucs"]}\n')
 
-    print(f'output_format: {options["output_format"]}\n')
+    #print(f'output_format: {options["output_format"]}\n')
     predict_with_model(options)
     print('Time: {:.0f} sec'.format(time() - start_time))
-

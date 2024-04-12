@@ -3,12 +3,10 @@ soundfile
 scipy
 tqdm
 librosa
-demucs
-#onnxruntime-gpu # nighlty version installed within the notebook to fix cuda12.2 issue.
+#demucs
 torch
 pyyaml
 ml_collections
-#pytorch_lightning
 samplerate==0.1.0
 segmentation_models_pytorch==0.3.3
 beartype==0.14.1
