@@ -3,7 +3,7 @@ soundfile
 scipy
 tqdm
 librosa
-#demucs
+demucs
 torch
 pyyaml
 ml_collections
